@@ -14,6 +14,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800&display=swap" rel="stylesheet">
 
   <style>
+    /* ظاهر شدن بدون جابجایی چینش */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
   /* ================= ریست و پایه ================= */
   *{box-sizing:border-box;margin:0;padding:0;font-family:'Vazirmatn',sans-serif}
   body{background:#0b0d10;color:#f5f5f5;line-height:2;overflow-x:hidden}
@@ -157,6 +169,146 @@ h3{
   scroll-behavior: smooth;
   
 }
+.accordion-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease;
+}
+
+.accordion-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+}
+
+.accordion-content p,
+.accordion-content li {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+/* حالت مخفی */
+.accordion-item {
+  opacity: 0;
+  transform: translateX(120px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* ظاهر شدن باکس */
+.accordion-item.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* متن‌های داخل هر باکس */
+.accordion-content p,
+.accordion-content li {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.accordion-content .text-show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* باکس‌ها */
+.accordion-item {
+  opacity: 0;
+  transform: translateX(120px);
+  transition: opacity 1.2s ease, transform 1.2s ease; /* کندتر شد */
+}
+
+/* وقتی باکس ظاهر شود */
+.accordion-item.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* متن‌ها */
+.accordion-content p,
+.accordion-content li {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease, transform 10 ease; /* کندتر شد */
+}
+
+.accordion-content .text-show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.accordion-item {
+  opacity: 0;
+  transform: translateX(120px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.accordion-item.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.accordion-content p,
+.accordion-content li {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.accordion-content .text-show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+body {
+  user-select: none; /* جلوگیری از انتخاب متن */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+img {
+  pointer-events: none; /* غیر قابل کلیک و درگ */
+  -webkit-user-drag: none;
+}
+
+.copyright {
+  margin-top: 40px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.developer {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.developer a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #1f7a63;
+  font-weight: 600;
+}
+
+.developer img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
 
   </style>
 </head>
@@ -171,19 +323,16 @@ h3{
 
 
 <!-- جای لوگو با حرکت سه‌بعدی و سایه عمیق -->
-<div class="logo-box">
-<img src="./ChatGPT_Image_Dec_14__2025__03_02_48_PM-removebg-preview.png" alt="لوگو ایزوگام احمدی">
+<div class="logo-box fade-in">
+  <img src="./ChatGPT_Image_Dec_14__2025__03_02_48_PM-removebg-preview.png">
 </div>
 
+<h1 class="hero-title fade-in">ایزوگام احمدی</h1>
 
-<!-- تیتر اصلی سه‌بعدی -->
-<h1 class="hero-title">ایزوگام احمدی</h1>
-
-
-<!-- زیرتیتر سه‌بعدی -->
-<p class="hero-subtitle">
-فروش و اجرای تخصصی ایزوگام با ضمانت واقعی و قیمت منصفانه
+<p class="hero-subtitle fade-in">
+  فروش و اجرای تخصصی ایزوگام با ضمانت واقعی و قیمت منصفانه
 </p>
+
 
 
 </div>
@@ -321,15 +470,30 @@ h3{
 <footer> 
   <h3 id="order"> برای ثبت سفارش با شماره های زیر و یا در فضای مجازی با ما در ارتباط باشید </h3>
   <p>📍 آدرس: تهران ...</p>
-  <p>☎️ 021-xxxxxxx | 📱 09xxxxxxxxx</p>
+  <p>☎️ 021-xxxxxxx | 📱 09100910270</p>
   <p>✉️ info@isogamahmadi.ir</p>
 
   <div class="socials">
-    <a href="https://instagram.com"><img src="./instagram-logo-1.png"></a>
-    <a href="https://t.me"><img src="./images-removebg-preview.png"></a>
-    <a href="https://eitaa.com"><img src="./eitaa-removebg-preview.png"></a>
-    <a href="https://wa.me/989000000000"><img src="./watsaap.jpg-removebg-preview.png"></a>
+    <a href="#"><img src="./instagram-logo-1.png"></a>
+    <a href="#"><img src="./images-removebg-preview.png"></a>
+    <a href="#"><img src="./eitaa-removebg-preview.png"></a>
+    <a href="#"><img src="./watsaap.jpg-removebg-preview.png"></a>
   </div>
+
+  <div class="copyright">
+  <p>
+    © کلیه حقوق مادی و معنوی این وب‌ سایت محفوظ است.
+  </p>
+
+  <div class="developer">
+    <span>طراحی و اجرا:</span>
+    <a href="https://amir-web-ir.github.io/Site.Craftt.ir/" target="_blank">
+      <img src="./-2147483648_-211238-removebg-preview.png" alt="Your Logo">
+      <span>  Site-craftt.ir </span>
+    </a>
+  </div>
+</div>
+
 </footer>
 
 <!-- ================= اسکریپت بارون ================= -->
@@ -403,7 +567,115 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });
+window.addEventListener('load', () => {
+  const items = document.querySelectorAll('.fade-in');
+  items.forEach((item, index) => {
+    setTimeout(() => {
+      item.classList.add('show');
+    }, index * 300);
+  });
+});
 
+document.addEventListener('DOMContentLoaded', () => {
+  const items = document.querySelectorAll('.accordion-item');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const item = entry.target;
+
+          // نمایش خود باکس با delay بین باکس‌ها
+          setTimeout(() => {
+            item.classList.add('show');
+
+            // نمایش متن‌ها با delay بیشتر بین هر خط
+            const texts = item.querySelectorAll('p, li');
+            texts.forEach((text, i) => {
+              setTimeout(() => {
+                text.classList.add('text-show');
+              }, i * 400); // کندتر شد (قبلاً 200ms)
+            });
+
+          }, 0);
+
+          observer.unobserve(item);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  items.forEach(item => observer.observe(item));
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const items = document.querySelectorAll('.accordion-item');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('show')) {
+          const item = entry.target;
+
+          // نمایش باکس
+          item.classList.add('show');
+
+          // نمایش متن‌ها با تاخیر
+          const texts = item.querySelectorAll('p, li');
+          texts.forEach((text, i) => {
+            setTimeout(() => {
+              text.classList.add('text-show');
+            }, i * 400);
+          });
+
+          observer.unobserve(item);
+        }
+      });
+    },
+    {
+      root: null,
+      threshold: 0,
+      // 👇 کلید حل مشکل:
+      rootMargin: '-40% 0px -40% 0px'
+    }
+  );
+
+  items.forEach(item => observer.observe(item));
+});
+
+
+
+
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault(); // جلوگیری از راست‌کلیک
+  alert('کپی کردن محتوا مجاز نیست!');
+});
+
+
+document.addEventListener('keydown', function(e) {
+  // Ctrl+C / Ctrl+S / Ctrl+U / Ctrl+Shift+I
+  if ((e.ctrlKey && ['c','s','u'].includes(e.key.toLowerCase())) || 
+      (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'i')) {
+    e.preventDefault();
+    alert('این کار مجاز نیست!');
+  }
+});
+
+
+</script>
+<script>
+document.addEventListener('keydown', function(e) {
+  if (
+    (e.ctrlKey && e.key.toLowerCase() === 'u') ||
+    (e.ctrlKey && e.shiftKey && ['i','j','c'].includes(e.key.toLowerCase())) ||
+    (e.ctrlKey && ['s','c','a'].includes(e.key.toLowerCase()))
+  ) {
+    e.preventDefault();
+    alert('دسترسی غیرمجاز');
+    return false;
+  }
+});
 </script>
 
 </body>
