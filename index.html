@@ -1,682 +1,1152 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-<head>
-  <link rel="icon" href="./ChatGPT_Image_Dec_14__2025__03_02_48_PM-removebg-preview.png">
-  <!-- ================= SEO حرفه‌ای ================= -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ایزوگام احمدی | نصب و فروش ایزوگام درجه یک</title>
-  <meta name="description" content="ایزوگام احمدی، فروش و نصب تخصصی انواع ایزوگام پشت بام، سرویس، استخر با ضمانت کتبی، قیمت مناسب و ثبت سفارش آنلاین.">
-  <meta name="keywords" content="ایزوگام احمدی, نصب ایزوگام, قیمت ایزوگام, ایزوگام پشت بام, ایزوگام استخر">
-  <meta name="author" content="ایزوگام احمدی">
-
-  <!-- فونت فارسی -->
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-  <style>
-    /* ظاهر شدن بدون جابجایی چینش */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-  /* ================= ریست و پایه ================= */
-  *{box-sizing:border-box;margin:0;padding:0;font-family:'Vazirmatn',sans-serif}
-  body{background:#0b0d10;color:#f5f5f5;line-height:2;overflow-x:hidden}
-  a{text-decoration:none;color:inherit}
-
-  /* ================= بکگراند بارون ================= */
-  canvas#rain{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1}
-
-  /* ================= هدر ================= */
-  header{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px}
-  .hero{max-width:900px}
-  .logo-box{
-    width:160px;height:160px;margin:0 auto 30px;
-    border-radius:50%;
-    background:radial-gradient(circle,#000000,#0b0d10);
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:0 0 80px rgba(31,122,99,.7)
-  }
-  .logo-box img{max-width:80%;max-height:80%;object-fit:contain}
-  header h1{font-size:52px;margin-bottom:20px}
-  header p{font-size:20px;opacity:.9}
-
-  
-  /* ================= بخش‌ها ================= */
-  section{padding:120px 20px;max-width:1300px;margin:auto}
-  section h2{text-align:center;font-size:42px;margin-bottom:60px;color:#ffffff}
-
-  /* ================= کارت‌های ایزوگام ================= */
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:50px}
-  .card{
-    background:#12151b;
-    border-radius:35px;
-    padding:35px;
-    box-shadow:0 40px 90px rgba(0,0,0,.8);
-    transform-style:preserve-3d;
-    transition:.6s
-  }
-  .card:hover{transform:translateY(-20px) rotateX(8deg)}
-
-  .card .img{
-    height:240px;border-radius:25px;
-    background:radial-gradient(circle,#1f7a63,#0b0d10);
-    display:flex;align-items:center;justify-content:center;
-    margin-bottom:25px
-  }
-  .card .img img{max-width:90%;max-height:90%;filter:drop-shadow(0 20px 40px #000)}
-
-  .card h3{font-size:26px;margin-bottom:10px}
-  .price{color:#1f7a63;font-size:22px;margin-bottom:15px}
-  .card ul{padding-right:20px;margin-bottom:20px}
-  .card ul li{margin-bottom:8px}
-
-  .btn{
-    display:inline-block;
-    padding:15px 40px;
-    border-radius:50px;
-    background:#1f7a63;
-    color:#000;
-    font-weight:700
-  }
-
-#about-services {
-  padding: 100px 20px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-#about-services h2 {
-  text-align: center;
-  font-size: 42px;
-  margin-bottom: 50px;
-  color: #ffffff;
-}
-
-.accordion-item {
-  margin-bottom: 20px;
-  border-radius: 20px;
-  overflow: hidden;
-  background: #12151b;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-  opacity: 0; /* مخفی کردن کشو */
-  transform: translateX(100%); /* کشوها از سمت راست شروع به باز شدن می‌کنند */
-  transition: transform 0.6s ease, opacity 0.6s ease;
-  
-}
-
-.accordion-header {
-  width: 100%;
-  text-align: right;
-  padding: 20px;
-  font-size: 22px;
-  font-weight: 700;
-  color: #ffffff;
-  background: #0b0d10;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  transition: background 0.3s;
-}
-
-.accordion-header:hover {
-  background: #1f7a63;
-  color: #0b0d10;
-}
-
-.accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  padding: 0 20px;
-  color: #f5f5f5;
-  transition: max-height 0.5s ease;
-  line-height: 1.8;
-}
-
-.accordion-content p,
-.accordion-content ul {
-  margin: 15px 0;
-}
-
-.accordion-content ul {
-  padding-right: 20px;
-}
-
-.accordion-content ul li {
-  margin-bottom: 10px;
-}
-
-
-  /* ================= فوتر ================= */
-  footer{padding:80px 20px;text-align:center}
-  .socials{display:flex;justify-content:center;gap:25px;margin:30px 0}
-  .socials img{width:60px;animation:float 3s ease-in-out infinite}
-  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-15px)}}
-h3{
-  text-align: center;
-}
-  /* ================= ریسپانسیو ================= */
-  @media(max-width:600px){header h1{font-size:36px}}
-
-  html {
-  scroll-behavior: smooth;
-  
-}
-.accordion-item {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.7s ease;
-}
-
-.accordion-item.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.6s ease;
-}
-
-.accordion-content p,
-.accordion-content li {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.4s ease;
-}
-
-/* حالت مخفی */
-.accordion-item {
-  opacity: 0;
-  transform: translateX(120px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-/* ظاهر شدن باکس */
-.accordion-item.show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* متن‌های داخل هر باکس */
-.accordion-content p,
-.accordion-content li {
-  opacity: 0;
-  transform: translateX(40px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.accordion-content .text-show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* باکس‌ها */
-.accordion-item {
-  opacity: 0;
-  transform: translateX(120px);
-  transition: opacity 1.2s ease, transform 1.2s ease; /* کندتر شد */
-}
-
-/* وقتی باکس ظاهر شود */
-.accordion-item.show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* متن‌ها */
-.accordion-content p,
-.accordion-content li {
-  opacity: 0;
-  transform: translateX(40px);
-  transition: opacity 0.8s ease, transform 10 ease; /* کندتر شد */
-}
-
-.accordion-content .text-show {
-  opacity: 1;
-  transform: translateX(0);
-}
-.accordion-item {
-  opacity: 0;
-  transform: translateX(120px);
-  transition: opacity 1.2s ease, transform 1.2s ease;
-}
-
-.accordion-item.show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.accordion-content p,
-.accordion-content li {
-  opacity: 0;
-  transform: translateX(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.accordion-content .text-show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-body {
-  user-select: none; /* جلوگیری از انتخاب متن */
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-}
-
-img {
-  pointer-events: none; /* غیر قابل کلیک و درگ */
-  -webkit-user-drag: none;
-}
-
-.copyright {
-  margin-top: 40px;
-  padding-top: 25px;
-  border-top: 1px solid rgba(255,255,255,0.15);
-  text-align: center;
-  font-size: 14px;
-  opacity: 0.85;
-}
-
-.developer {
-  margin-top: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-}
-
-.developer a {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #1f7a63;
-  font-weight: 600;
-}
-
-.developer img {
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
-}
-
-  </style>
-</head>
-<body>
-
-<!-- ================= بکگراند بارون ================= -->
-<canvas id="rain"></canvas>
-
-<!-- ================= هدر حرفه‌ای سه‌بعدی ================= -->
-<header class="site-header">
-<div class="hero">
-
-
-<!-- جای لوگو با حرکت سه‌بعدی و سایه عمیق -->
-<div class="logo-box fade-in">
-  <img src="./ChatGPT_Image_Dec_14__2025__03_02_48_PM-removebg-preview.png">
-</div>
-
-<h1 class="hero-title fade-in">ایزوگام احمدی</h1>
-
-<p class="hero-subtitle fade-in">
-  فروش و اجرای تخصصی ایزوگام با ضمانت واقعی و قیمت منصفانه
-</p>
-
-
-
-</div>
-</header>
-
-<section id="about-services">
-  <h2>درباره و خدمات ما</h2>
-
-  <div class="accordion">
-    <!-- کشو درباره ما -->
-    <div class="accordion-item">
-      <button class="accordion-header">درباره ما</button>
-      <div class="accordion-content">
-        <p>ایزوگام احمدی با بیش از ۱۵ سال سابقه در زمینه فروش و نصب ایزوگام‌های درجه یک، به عنوان یکی از معتبرترین مراکز در ایران فعالیت می‌کند. تیم متخصص ما متعهد به ارائه بهترین خدمات و مشاوره رایگان به مشتریان است.</p>
-        <p>هدف ما افزایش رضایت مشتری و ارائه راه‌حل‌های مناسب برای هر نوع پروژه، از ساختمان‌های مسکونی تا تجاری می‌باشد.</p>
-      </div>
-    </div>
-
-    <!-- کشو خدمات ما -->
-    <div class="accordion-item">
-      <button class="accordion-header">خدمات ما</button>
-      <div class="accordion-content">
-        <ul>
-          <li>فروش و نصب ایزوگام پشت‌بام، سرویس و استخر</li>
-          <li>ارائه ایزوگام‌های دولایه و پلیمری با ضمانت کتبی</li>
-          <li>مشاوره رایگان برای انتخاب بهترین مدل ایزوگام</li>
-          <li>تضمین کیفیت و اجرای سریع پروژه‌ها</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- کشو درباره ایزوگام‌ها -->
-    <div class="accordion-item">
-      <button class="accordion-header">درباره ایزوگام‌ها</button>
-      <div class="accordion-content">
-        <p>ایزوگام‌های ارائه شده توسط ما از بهترین مواد اولیه ساخته شده و دارای مقاومت بالا در برابر آب، حرارت و شرایط جوی مختلف می‌باشند.</p>
-        <p>هر نوع ایزوگام متناسب با نیاز پروژه شما و با رعایت استانداردهای بین‌المللی ارائه می‌شود تا عمر مفید طولانی و امنیت کامل برای ساختمان شما فراهم شود.</p>
-      </div>
-    </div>
-  </div>
-
-</section>
-
-
-<!-- ================= مدل‌های ایزوگام ================= -->
-<section>
-  <h2>مدل‌های ایزوگام</h2>
-  <div class="grid">
-
-    <!-- کارت ایزوگام -->
-    <div class="card">
-      <div class="img"><img src="./ProductImage71983327ProductImage48079610Products-400-removebg-preview.png"></div>
-      <h3>ایزوگام پشت‌بام ویژه</h3>
-      <div class="price">متری 190,000 تومان</div>
-      <p>مناسب ساختمان‌های مسکونی و تجاری با مقاومت بالا در برابر باران و آفتاب.</p>
-      <ul>
-        <li>عمر مفید بالا</li>
-        <li>چسبندگی قوی</li>
-        <li>ضمانت کتبی</li>
-      </ul>
-      <a href="#order" class="btn scroll-link">ثبت سفارش</a>
-    </div>
-    
-    <!-- کارت ایزوگام -->
-    <div class="card">
-      <div class="img"><img src="./ProductImage71983327ProductImage48079610Products-400-removebg-preview.png"></div>
-      <h3>ایزوگام پشت‌بام ویژه</h3>
-      <div class="price">متری 190,000 تومان</div>
-      <p>مناسب ساختمان‌های مسکونی و تجاری با مقاومت بالا در برابر باران و آفتاب.</p>
-      <ul>
-        <li>عمر مفید بالا</li>
-        <li>چسبندگی قوی</li>
-        <li>ضمانت کتبی</li>
-      </ul>
-      <a href="#order" class="btn scroll-link">ثبت سفارش</a>
-    </div>
-
-    <div class="card">
-      <div class="img"><img src="./ProductImage71983327ProductImage48079610Products-400-removebg-preview.png"></div>
-      <h3>ایزوگام پشت‌بام ویژه</h3>
-      <div class="price">متری 190,000 تومان</div>
-      <p>مناسب ساختمان‌های مسکونی و تجاری با مقاومت بالا در برابر باران و آفتاب.</p>
-      <ul>
-        <li>عمر مفید بالا</li>
-        <li>چسبندگی قوی</li>
-        <li>ضمانت کتبی</li>
-      </ul>
-      <a href="#order" class="btn scroll-link">ثبت سفارش</a>
-    </div>
-
-    <div class="card">
-      <div class="img"><img src="./ProductImage71983327ProductImage48079610Products-400-removebg-preview.png"></div>
-      <h3>ایزوگام پشت‌بام ویژه</h3>
-      <div class="price">متری 190,000 تومان</div>
-      <p>مناسب ساختمان‌های مسکونی و تجاری با مقاومت بالا در برابر باران و آفتاب.</p>
-      <ul>
-        <li>عمر مفید بالا</li>
-        <li>چسبندگی قوی</li>
-        <li>ضمانت کتبی</li>
-      </ul>
-      <a href="#order" class="btn scroll-link">ثبت سفارش</a>
-    </div>
-
-    <div class="card">
-      <div class="img"><img src="./ProductImage71983327ProductImage48079610Products-400-removebg-preview.png"></div>
-      <h3>ایزوگام پشت‌بام ویژه</h3>
-      <div class="price">متری 190,000 تومان</div>
-      <p>مناسب ساختمان‌های مسکونی و تجاری با مقاومت بالا در برابر باران و آفتاب.</p>
-      <ul>
-        <li>عمر مفید بالا</li>
-        <li>چسبندگی قوی</li>
-        <li>ضمانت کتبی</li>
-      </ul>
-      <a href="#order" class="btn scroll-link">ثبت سفارش</a>
-    </div>
-
-    <div class="card">
-      <div class="img"><img src="./ProductImage71983327ProductImage48079610Products-400-removebg-preview.png"></div>
-      <h3>ایزوگام پشت‌بام ویژه</h3>
-      <div class="price">متری 190,000 تومان</div>
-      <p>مناسب ساختمان‌های مسکونی و تجاری با مقاومت بالا در برابر باران و آفتاب.</p>
-      <ul>
-        <li>عمر مفید بالا</li>
-        <li>چسبندگی قوی</li>
-        <li>ضمانت کتبی</li>
-      </ul>
-      <a href="#order" class="btn scroll-link">ثبت سفارش</a>
-    </div>
-
-</section>
-
-
-<!-- ================= فوتر ================= -->
-
-<footer> 
-  <h3 id="order"> برای ثبت سفارش با شماره های زیر و یا در فضای مجازی با ما در ارتباط باشید </h3>
-  <p>📍 آدرس: تهران ...</p>
-  <p>☎️ 021-xxxxxxx | 📱 09100910270</p>
-  <p>✉️ info@isogamahmadi.ir</p>
-
-  <div class="socials">
-    <a href="#"><img src="./instagram-logo-1.png"></a>
-    <a href="#"><img src="./images-removebg-preview.png"></a>
-    <a href="#"><img src="./eitaa-removebg-preview.png"></a>
-    <a href="#"><img src="./watsaap.jpg-removebg-preview.png"></a>
-  </div>
-
-  <div class="copyright">
-  <p>
-    © کلیه حقوق مادی و معنوی این وب‌ سایت محفوظ است.
-  </p>
-
-  <div class="developer">
-    <span>طراحی و اجرا:</span>
-    <a href="https://amir-web-ir.github.io/Site.Craftt.ir/" target="_blank">
-      <img src="./-2147483648_-211238-removebg-preview.png" alt="Your Logo">
-      <span>  Site-craftt.ir </span>
-    </a>
-  </div>
-</div>
-
-</footer>
-
-<!-- ================= اسکریپت بارون ================= -->
-<script>
-const canvas=document.getElementById('rain');
-const ctx=canvas.getContext('2d');
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-let drops=Array.from({length:350},()=>({x:Math.random()*canvas.width,y:Math.random()*canvas.height,l:Math.random()*20+10}));
-function rain(){ctx.clearRect(0,0,canvas.width,canvas.height);ctx.strokeStyle='rgba(255,255,255,.25)';drops.forEach(d=>{ctx.beginPath();ctx.moveTo(d.x,d.y);ctx.lineTo(d.x,d.y+d.l);ctx.stroke();d.y+=7;if(d.y>canvas.height)d.y=0});requestAnimationFrame(rain)}rain();
-document.querySelectorAll('.scroll-link').forEach(link => {
-  link.addEventListener('click', function(e){
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-});
-document.addEventListener("DOMContentLoaded", function() {
-  const items = document.querySelectorAll('.accordion-item');
-
-  items.forEach((item, index) => {
-    setTimeout(() => {
-      // نمایش خود کشو
-      item.style.opacity = 1;
-      item.style.transform = "translateX(0)";
-
-      // باز کردن محتوای کشو
-      const content = item.querySelector('.accordion-content');
-      content.style.maxHeight = content.scrollHeight + 'px';
-
-      // نمایش خط به خط متن داخل کشو
-      const lines = content.querySelectorAll('p, li');
-      lines.forEach((line, i) => {
-        setTimeout(() => {
-          line.style.opacity = 1;
-          line.style.transform = "translateX(0)";
-        }, i * 300);  // هر خط با 300ms فاصله نمایش داده می‌شود
-      });
-
-    }, index * 600); // هر کشو با 600ms فاصله ظاهر می‌شود
-  });
-
-  // برای کلیک روی هدر کشوها
-  const accordions = document.querySelectorAll('.accordion-header');
-  accordions.forEach(header => {
-    header.addEventListener('click', () => {
-      const content = header.nextElementSibling;
-      if(content.style.maxHeight && content.style.maxHeight !== "0px") {
-        content.style.maxHeight = null;
-        content.querySelectorAll('p, li').forEach(line => {
-          line.style.opacity = 0;
-          line.style.transform = "translateX(50px)";
-        });
-      } else {
-        document.querySelectorAll('.accordion-content').forEach(c => {
-          c.style.maxHeight = null;
-          c.querySelectorAll('p, li').forEach(line => {
-            line.style.opacity = 0;
-            line.style.transform = "translateX(50px)";
-          });
-        });
-        content.style.maxHeight = content.scrollHeight + 'px';
-        const lines = content.querySelectorAll('p, li');
-        lines.forEach((line, i) => {
-          setTimeout(() => {
-            line.style.opacity = 1;
-            line.style.transform = "translateX(0)";
-          }, i * 300);
-        });
+  <head>
+    <link
+      rel="icon"
+      href="./ChatGPT_Image_Dec_14__2025__03_02_48_PM-removebg-preview.png"
+    />
+    <!-- ================= SEO حرفه‌ای ================= -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ایزوگام احمدی | نصب و فروش ایزوگام درجه یک</title>
+    <meta
+      name="description"
+      content="ایزوگام احمدی، فروش و نصب تخصصی انواع ایزوگام پشت بام، سرویس، استخر با ضمانت کتبی، قیمت مناسب و ثبت سفارش آنلاین."
+    />
+    <meta
+      name="keywords"
+      content="ایزوگام احمدی, نصب ایزوگام, قیمت ایزوگام, ایزوگام پشت بام, ایزوگام استخر"
+    />
+    <meta name="author" content="ایزوگام احمدی" />
+    <meta
+      name="description"
+      content="ایزوگام احمدی، فروش و نصب تخصصی انواع ایزوگام، ایزوگم و ایزوگام دلیجان با ضمانت کتبی و قیمت مناسب."
+    />
+    <meta
+      name="keywords"
+      content="ایزوگام, ایزوگم, ایزوگام دلیجان, نصب ایزوگام, ایزوگام پشت بام, ایزوگام احمدی"
+    />
+    <meta name="author" content="ایزوگام احمدی" />
+
+    <!-- فونت فارسی -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ظاهر شدن بدون جابجایی چینش */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
       }
-    });
-  });
-});
-window.addEventListener('load', () => {
-  const items = document.querySelectorAll('.fade-in');
-  items.forEach((item, index) => {
-    setTimeout(() => {
-      item.classList.add('show');
-    }, index * 300);
-  });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-  const items = document.querySelectorAll('.accordion-item');
+      .fade-in.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const item = entry.target;
+      /* ================= ریست و پایه ================= */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Vazirmatn", sans-serif;
+      }
+      body {
+        background: #0b0d10;
+        color: #f5f5f5;
+        line-height: 2;
+        overflow-x: hidden;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
 
-          // نمایش خود باکس با delay بین باکس‌ها
+      /* ================= بکگراند بارون ================= */
+      canvas#rain {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+
+      /* ================= هدر ================= */
+      header {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 40px;
+      }
+      .hero {
+        max-width: 900px;
+      }
+      .logo-box {
+        width: 160px;
+        height: 160px;
+        margin: 0 auto 30px;
+        border-radius: 50%;
+        background: radial-gradient(circle, #000000, #0b0d10);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 80px rgba(31, 122, 99, 0.7);
+      }
+      .logo-box img {
+        max-width: 80%;
+        max-height: 80%;
+        object-fit: contain;
+      }
+      header h1 {
+        font-size: 52px;
+        margin-bottom: 20px;
+      }
+      header p {
+        font-size: 20px;
+        opacity: 0.9;
+      }
+
+      /* ================= بخش‌ها ================= */
+      section {
+        padding: 120px 20px;
+        max-width: 1300px;
+        margin: auto;
+      }
+      section h2 {
+        text-align: center;
+        font-size: 42px;
+        margin-bottom: 60px;
+        color: #ffffff;
+      }
+
+      /* ================= کارت‌های ایزوگام ================= */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 50px;
+      }
+      .card {
+        background: #12151b;
+        border-radius: 35px;
+        padding: 35px;
+        box-shadow: 0 40px 90px rgba(0, 0, 0, 0.8);
+        transform-style: preserve-3d;
+        transition: 0.6s;
+      }
+      .card:hover {
+        transform: translateY(-20px) rotateX(8deg);
+      }
+
+      .card .img {
+        height: 240px;
+        border-radius: 25px;
+        background: radial-gradient(circle, #1f7a63, #0b0d10);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 25px;
+      }
+      .card .img img {
+        max-width: 90%;
+        max-height: 90%;
+        filter: drop-shadow(0 20px 40px #000);
+      }
+
+      .card h3 {
+        font-size: 26px;
+        margin-bottom: 10px;
+      }
+      .price {
+        color: #1f7a63;
+        font-size: 22px;
+        margin-bottom: 15px;
+      }
+      .card ul {
+        padding-right: 20px;
+        margin-bottom: 20px;
+      }
+      .card ul li {
+        margin-bottom: 8px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 15px 40px;
+        border-radius: 50px;
+        background: #1f7a63;
+        color: #000;
+        font-weight: 700;
+      }
+
+      #about-services {
+        padding: 100px 20px;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      #about-services h2 {
+        text-align: center;
+        font-size: 42px;
+        margin-bottom: 50px;
+        color: #ffffff;
+      }
+
+      .accordion-item {
+        margin-bottom: 20px;
+        border-radius: 20px;
+        overflow: hidden;
+        background: #12151b;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+        opacity: 0; /* مخفی کردن کشو */
+        transform: translateX(
+          100%
+        ); /* کشوها از سمت راست شروع به باز شدن می‌کنند */
+        transition: transform 0.6s ease, opacity 0.6s ease;
+      }
+
+      .accordion-header {
+        width: 100%;
+        text-align: right;
+        padding: 20px;
+        font-size: 22px;
+        font-weight: 700;
+        color: #ffffff;
+        background: #0b0d10;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        transition: background 0.3s;
+      }
+
+      .accordion-header:hover {
+        background: #1f7a63;
+        color: #0b0d10;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 20px;
+        color: #f5f5f5;
+        transition: max-height 0.5s ease;
+        line-height: 1.8;
+      }
+
+      .accordion-content p,
+      .accordion-content ul {
+        margin: 15px 0;
+      }
+
+      .accordion-content ul {
+        padding-right: 20px;
+      }
+
+      .accordion-content ul li {
+        margin-bottom: 10px;
+      }
+
+      /* ================= فوتر ================= */
+      footer {
+        padding: 80px 20px;
+        text-align: center;
+      }
+      .socials {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        margin: 30px 0;
+      }
+      .socials img {
+        width: 60px;
+        animation: float 3s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+      h3 {
+        text-align: center;
+      }
+      /* ================= ریسپانسیو ================= */
+      @media (max-width: 600px) {
+        header h1 {
+          font-size: 36px;
+        }
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+      .accordion-item {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.7s ease;
+      }
+
+      .accordion-item.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.6s ease;
+      }
+
+      .accordion-content p,
+      .accordion-content li {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.4s ease;
+      }
+
+      /* حالت مخفی */
+      .accordion-item {
+        opacity: 0;
+        transform: translateX(120px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+
+      /* ظاهر شدن باکس */
+      .accordion-item.show {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      /* متن‌های داخل هر باکس */
+      .accordion-content p,
+      .accordion-content li {
+        opacity: 0;
+        transform: translateX(40px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+
+      .accordion-content .text-show {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      /* باکس‌ها */
+      .accordion-item {
+        opacity: 0;
+        transform: translateX(120px);
+        transition: opacity 1.2s ease, transform 1.2s ease; /* کندتر شد */
+      }
+
+      /* وقتی باکس ظاهر شود */
+      .accordion-item.show {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      /* متن‌ها */
+      .accordion-content p,
+      .accordion-content li {
+        opacity: 0;
+        transform: translateX(40px);
+        transition: opacity 0.8s ease, transform 10 ease; /* کندتر شد */
+      }
+
+      .accordion-content .text-show {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .accordion-item {
+        opacity: 0;
+        transform: translateX(120px);
+        transition: opacity 1.2s ease, transform 1.2s ease;
+      }
+
+      .accordion-item.show {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .accordion-content p,
+      .accordion-content li {
+        opacity: 0;
+        transform: translateX(40px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .accordion-content .text-show {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      body {
+        user-select: none; /* جلوگیری از انتخاب متن */
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+      }
+
+      img {
+        pointer-events: none; /* غیر قابل کلیک و درگ */
+        -webkit-user-drag: none;
+      }
+
+      .copyright {
+        margin-top: 40px;
+        padding-top: 25px;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        text-align: center;
+        font-size: 14px;
+        opacity: 0.85;
+      }
+
+      .developer {
+        margin-top: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .developer a {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: #1f7a63;
+        font-weight: 600;
+      }
+
+      .developer img {
+        width: 22px;
+        height: 22px;
+        object-fit: contain;
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        margin-top: 12px;
+      }
+
+      .social-icons a {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: #1f7a63;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+      }
+
+      .social-icons img {
+        width: 18px;
+        height: 18px;
+        filter: none;
+        transition: 0.3s;
+      }
+
+      .social-icons a:hover {
+        background: #ffffff;
+      }
+
+      .social-icons a:hover img {
+        filter: none;
+      }
+      .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* مرکز کردن تمام محتوای کارت افقی */
+        text-align: center;
+      }
+
+      .card .btn {
+        margin-top: 20px;
+        display: inline-block; /* مطمئن شو دکمه هم افقی وسط باشد */
+      }
+
+      .hero-title,
+      .hero-subtitle {
+        font-weight: 800;
+        background: linear-gradient(270deg, #1f7a63, #ffffff, #1f7a63);
+        background-size: 600% 600%; /* اندازه بزرگ برای حرکت نرم */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: oilFlow 6s ease-in-out infinite;
+
+        /* افکت Fade-in اولیه */
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .hero-title {
+        font-size: 52px;
+      }
+
+      .hero-subtitle {
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      /* کلاس show برای Fade-in */
+      .fade-in.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .footer-text {
+        font-size: 18px;
+        font-weight: 600;
+        text-align: center;
+
+        /* رنگ روغنی متحرک */
+        background: linear-gradient(270deg, #1f7a63, #ffffff, #1f7a63);
+        background-size: 600% 600%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: oilFlow 6s ease-in-out infinite;
+      }
+
+      /* همان انیمیشن جریان روغنی که برای هدر استفاده شد */
+      @keyframes oilFlow {
+        0% {
+          background-position: 0% 50%;
+        }
+        25% {
+          background-position: 50% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        75% {
+          background-position: 50% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .section-title {
+        font-size: 42px;
+        text-align: center;
+        font-weight: 800;
+
+        /* رنگ روغنی متحرک */
+        background: linear-gradient(270deg, #1f7a63, #ffffff, #1f7a63);
+        background-size: 600% 600%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: oilFlow 6s ease-in-out infinite;
+      }
+
+      /* همان انیمیشن جریان روغنی */
+      @keyframes oilFlow {
+        0% {
+          background-position: 0% 50%;
+        }
+        25% {
+          background-position: 50% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        75% {
+          background-position: 50% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      /* تیترهای بخش‌ها */
+      .section-title {
+        font-size: 42px;
+        text-align: center;
+        font-weight: 800;
+
+        /* رنگ روغنی متحرک */
+        background: linear-gradient(270deg, #1f7a63, #ffffff, #1f7a63);
+        background-size: 600% 600%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: oilFlow 6s ease-in-out infinite;
+      }
+
+      /* همان انیمیشن جریان روغنی که برای هدر و فوتر استفاده شد */
+      @keyframes oilFlow {
+        0% {
+          background-position: 0% 50%;
+        }
+        25% {
+          background-position: 50% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        75% {
+          background-position: 50% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .card .btn {
+        display: inline-block;
+        padding: 15px 40px;
+        border-radius: 50px;
+        font-weight: 700;
+        text-align: center;
+        cursor: pointer;
+
+        /* رنگ روغنی متحرک */
+        background: linear-gradient(270deg, #1f7a63, #ffffff, #1f7a63);
+        background-size: 600% 600%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: oilFlow 6s ease-in-out infinite;
+
+        /* افکت کوچک عمق */
+        box-shadow: 0 4px 12px rgba(31, 122, 99, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      /* وقتی موس روی دکمه میره کمی بزرگ شود */
+      .card .btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(31, 122, 99, 0.5);
+      }
+
+      /* همان انیمیشن رنگ روغنی */
+      @keyframes oilFlow {
+        0% {
+          background-position: 0% 50%;
+        }
+        25% {
+          background-position: 50% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        75% {
+          background-position: 50% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ================= بکگراند بارون ================= -->
+    <canvas id="rain"></canvas>
+
+    <!-- ================= هدر حرفه‌ای سه‌بعدی ================= -->
+    <header class="site-header">
+      <div class="hero">
+        <!-- جای لوگو با حرکت سه‌بعدی و سایه عمیق -->
+        <div class="roof fade-in"></div>
+        <div class="logo-box fade-in">
+          <img
+            src="./ChatGPT_Image_Dec_14__2025__03_02_48_PM-removebg-preview.png"
+          />
+        </div>
+
+        <h1 class="hero-title fade-in">ایزوگام احمدی</h1>
+        <p class="hero-subtitle fade-in">
+          فروش و اجرای تخصصی ایزوگام با ضمانت واقعی
+        </p>
+      </div>
+    </header>
+
+    <section id="about-services">
+      <h2 class="section-title">درباره و خدمات ما</h2>
+
+      <div class="accordion">
+        <!-- کشو درباره ما -->
+        <div class="accordion-item">
+          <button class="accordion-header">درباره ما</button>
+          <div class="accordion-content">
+            <p>
+              ایزوگام احمدی با بیش از ۱۵ سال سابقه در زمینه فروش و نصب
+              ایزوگام‌های درجه یک، به عنوان یکی از معتبرترین مراکز در ایران
+              فعالیت می‌کند. تیم متخصص ما متعهد به ارائه بهترین خدمات و مشاوره
+              رایگان به مشتریان است.
+            </p>
+            <p>
+              هدف ما افزایش رضایت مشتری و ارائه راه‌حل‌های مناسب برای هر نوع
+              پروژه، از ساختمان‌های مسکونی تا تجاری می‌باشد.
+            </p>
+          </div>
+        </div>
+
+        <!-- کشو خدمات ما -->
+        <div class="accordion-item">
+          <button class="accordion-header">خدمات ما</button>
+          <div class="accordion-content">
+            <ul>
+              <li>فروش و نصب ایزوگام پشت‌بام، سرویس و استخر</li>
+              <li>ارائه ایزوگام‌های دولایه و پلیمری با ضمانت کتبی</li>
+              <li>مشاوره رایگان برای انتخاب بهترین مدل ایزوگام</li>
+              <li>تضمین کیفیت و اجرای سریع پروژه‌ها</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- کشو درباره ایزوگام‌ها -->
+        <div class="accordion-item">
+          <button class="accordion-header">درباره ایزوگام‌ها</button>
+          <div class="accordion-content">
+            <p>
+              ایزوگام‌های ارائه شده توسط ما از بهترین مواد اولیه ساخته شده و
+              دارای مقاومت بالا در برابر آب، حرارت و شرایط جوی مختلف می‌باشند.
+            </p>
+            <p>
+              هر نوع ایزوگام متناسب با نیاز پروژه شما و با رعایت استانداردهای
+              بین‌المللی ارائه می‌شود تا عمر مفید طولانی و امنیت کامل برای
+              ساختمان شما فراهم شود.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= مدل‌های ایزوگام ================= -->
+    <section>
+      <h2 class="section-title">مدل‌های ایزوگام</h2>
+      <div class="grid">
+        <!-- سپهر گستر دلیجان -->
+        <div class="card">
+          <div class="img">
+            <img
+              src="./izogam-sepehr-gostar-delijan-125-pic-removebg-preview.png"
+            />
+          </div>
+          <h3>ایزوگام سپهر گستر دلیجان</h3>
+          <p>
+            ایزوگام اقتصادی و استاندارد، مناسب پشت‌بام ساختمان‌های مسکونی و
+            فضاهای کم‌تردد.
+          </p>
+          <ul>
+            <li>دارای نشان استاندارد ملی</li>
+            <li>کیفیت مناسب و مقرون‌به‌صرفه</li>
+            <li>مناسب مناطق معتدل</li>
+          </ul>
+          <a href="#order" class="btn scroll-link">استعلام قیمت و ثبت سفارش</a>
+          <div class="social-icons">
+            <a href="https://wa.me/989XXXXXXXXX" target="_blank">
+              <img src="./watsaap.jpg-removebg-preview.png" alt="واتساپ" />
+            </a>
+            <a href="https://t.me/YourID" target="_blank">
+              <img src="./images-removebg-preview.png" alt="تلگرام" />
+            </a>
+            <a href="https://instagram.com/YourID" target="_blank">
+              <img src="./instagram-logo-1.png" alt="اینستاگرام" />
+            </a>
+            <a href="https://eitaa.com/YourID" target="_blank">
+              <img src="./eitaa-removebg-preview.png" alt="ایتا" />
+            </a>
+          </div>
+        </div>
+
+        <!-- بام گستر دلیجان -->
+        <div class="card">
+          <div class="img">
+            <img
+              src="./6ed93fd71436fa19d18e3b3cee7abb2b0852a2c7_1703542857-removebg-preview.png"
+            />
+          </div>
+          <h3>ایزوگام بام گستر دلیجان</h3>
+          <p>ایزوگام با دوام بالا مناسب ساختمان‌های مسکونی، اداری و تجاری.</p>
+          <ul>
+            <li>چسبندگی قوی به سطوح مختلف</li>
+            <li>مقاوم در برابر گرما و سرما</li>
+            <li>دارای ضمانت کارخانه</li>
+          </ul>
+          <a href="#order" class="btn scroll-link">استعلام قیمت و ثبت سفارش</a>
+          <div class="social-icons">
+            <a href="https://wa.me/989XXXXXXXXX" target="_blank">
+              <img src="./watsaap.jpg-removebg-preview.png" alt="واتساپ" />
+            </a>
+            <a href="https://t.me/YourID" target="_blank">
+              <img src="./images-removebg-preview.png" alt="تلگرام" />
+            </a>
+            <a href="https://instagram.com/YourID" target="_blank">
+              <img src="./instagram-logo-1.png" alt="اینستاگرام" />
+            </a>
+            <a href="https://eitaa.com/YourID" target="_blank">
+              <img src="./eitaa-removebg-preview.png" alt="ایتا" />
+            </a>
+          </div>
+        </div>
+
+        <!-- شرق دلیجان -->
+        <div class="card">
+          <div class="img">
+            <img src="./gheymat-izogam-shargh-delijan-removebg-preview.png" />
+          </div>
+          <h3>ایزوگام شرق دلیجان</h3>
+          <p>
+            ایزوگام دولایه پلیمری با کیفیت بالا، مناسب مناطق سردسیر و پر بارش.
+          </p>
+          <ul>
+            <li>عمر مفید بالا</li>
+            <li>انعطاف‌پذیری عالی</li>
+            <li>مناسب پروژه‌های حرفه‌ای</li>
+          </ul>
+          <a href="#order" class="btn scroll-link">استعلام قیمت و ثبت سفارش</a>
+          <div class="social-icons">
+            <a href="https://wa.me/989XXXXXXXXX" target="_blank">
+              <img src="./watsaap.jpg-removebg-preview.png" alt="واتساپ" />
+            </a>
+            <a href="https://t.me/YourID" target="_blank">
+              <img src="./images-removebg-preview.png" alt="تلگرام" />
+            </a>
+            <a href="https://instagram.com/YourID" target="_blank">
+              <img src="./instagram-logo-1.png" alt="اینستاگرام" />
+            </a>
+            <a href="https://eitaa.com/YourID" target="_blank">
+              <img src="./eitaa-removebg-preview.png" alt="ایتا" />
+            </a>
+          </div>
+        </div>
+
+        <!-- پشم شیشه دلیجان -->
+        <div class="card">
+          <div class="img">
+            <img
+              src="./پشم_شیشه_دلیجان_1661944982432_431312-removebg-preview.png"
+            />
+          </div>
+          <h3>ایزوگام پشم شیشه دلیجان</h3>
+          <p>ایزوگام مسلح به الیاف پشم شیشه با استحکام و دوام بالا.</p>
+          <ul>
+            <li>مقاوم در برابر ترک‌خوردگی</li>
+            <li>مناسب پشت‌بام، سوله و پارکینگ</li>
+            <li>دوام طولانی‌مدت</li>
+          </ul>
+          <a href="#order" class="btn scroll-link">استعلام قیمت و ثبت سفارش</a>
+          <div class="social-icons">
+            <a href="https://wa.me/989XXXXXXXXX" target="_blank">
+              <img src="./watsaap.jpg-removebg-preview.png" alt="واتساپ" />
+            </a>
+            <a href="https://t.me/YourID" target="_blank">
+              <img src="./images-removebg-preview.png" alt="تلگرام" />
+            </a>
+            <a href="https://instagram.com/YourID" target="_blank">
+              <img src="./instagram-logo-1.png" alt="اینستاگرام" />
+            </a>
+            <a href="https://eitaa.com/YourID" target="_blank">
+              <img src="./eitaa-removebg-preview.png" alt="ایتا" />
+            </a>
+          </div>
+        </div>
+
+        <!-- پشم شیشه ایران -->
+        <div class="card">
+          <div class="img">
+            <img src="./kY2zjg6eSJP9L1Ck-removebg-preview.png" />
+          </div>
+          <h3>ایزوگام پشم شیشه ایران</h3>
+          <p>از برندهای معتبر و باسابقه، با کیفیت ممتاز و استانداردهای بالا.</p>
+          <ul>
+            <li>کیفیت صادراتی</li>
+            <li>مقاوم در برابر اشعه UV</li>
+            <li>مناسب پروژه‌های خاص و لوکس</li>
+          </ul>
+          <a href="#order" class="btn scroll-link">استعلام قیمت و ثبت سفارش</a>
+          <div class="social-icons">
+            <a href="https://wa.me/989XXXXXXXXX" target="_blank">
+              <img src="./watsaap.jpg-removebg-preview.png" alt="واتساپ" />
+            </a>
+            <a href="https://t.me/YourID" target="_blank">
+              <img src="./images-removebg-preview.png" alt="تلگرام" />
+            </a>
+            <a href="https://instagram.com/YourID" target="_blank">
+              <img src="./instagram-logo-1.png" alt="اینستاگرام" />
+            </a>
+            <a href="https://eitaa.com/YourID" target="_blank">
+              <img src="./eitaa-removebg-preview.png" alt="ایتا" />
+            </a>
+          </div>
+        </div>
+
+        <!-- سراپوش دلیجان -->
+        <div class="card">
+          <div class="img">
+            <img
+              src="./ایزوگام-سراپوش-ساده-البرز-مصالح-compressed-removebg-preview.png"
+            />
+          </div>
+          <h3>ایزوگام سراپوش دلیجان</h3>
+          <p>ایزوگام با تکنولوژی روز، مناسب مناطق گرمسیری و آفتابی.</p>
+          <ul>
+            <li>مقاوم در برابر تابش شدید آفتاب</li>
+            <li>انعطاف‌پذیر و سبک</li>
+            <li>دارای ضمانت‌نامه معتبر</li>
+          </ul>
+          <a href="#order" class="btn scroll-link">استعلام قیمت و ثبت سفارش</a>
+          <div class="social-icons">
+            <a href="https://wa.me/989XXXXXXXXX" target="_blank">
+              <img src="./watsaap.jpg-removebg-preview.png" alt="واتساپ" />
+            </a>
+            <a href="https://t.me/YourID" target="_blank">
+              <img src="./images-removebg-preview.png" alt="تلگرام" />
+            </a>
+            <a href="https://instagram.com/YourID" target="_blank">
+              <img src="./instagram-logo-1.png" alt="اینستاگرام" />
+            </a>
+            <a href="https://eitaa.com/YourID" target="_blank">
+              <img src="./eitaa-removebg-preview.png" alt="ایتا" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= فوتر ================= -->
+
+    <footer>
+      <h3 class="footer-text">
+        برای ثبت سفارش و ارتباط با ما در شبکه‌های اجتماعی یا تلفن، از راه‌های
+        زیر استفاده کنید.
+      </h3>
+      <p>📍 آدرس: نمایندگی بازار بزرگ تهران</p>
+      <p>فروش و اجرا و نصب سراسر تهران و حومه</p>
+      <p>☎️ 021-12345678 | 📱 09100910270</p>
+      <p>✉️ info@isogamahmadi.ir</p>
+
+      <div class="socials">
+        <a href="#"><img src="./instagram-logo-1.png" /></a>
+        <a href="#"><img src="./images-removebg-preview.png" /></a>
+        <a href="#"><img src="./eitaa-removebg-preview.png" /></a>
+        <a href="#"><img src="./watsaap.jpg-removebg-preview.png" /></a>
+      </div>
+
+      <div class="copyright">
+        <p>© کلیه حقوق مادی و معنوی این وب‌ سایت محفوظ است.</p>
+
+        <div class="developer">
+          <span>طراحی و اجرا:</span>
+          <a
+            href="https://amir-web-ir.github.io/Site.Craftt.ir/"
+            target="_blank"
+          >
+            <img
+              src="./-2147483648_-211238-removebg-preview.png"
+              alt="Your Logo"
+            />
+            <span> Site-craftt.ir </span>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ================= اسکریپت بارون ================= -->
+    <script>
+      const canvas = document.getElementById("rain");
+      const ctx = canvas.getContext("2d");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      let drops = Array.from({ length: 350 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        l: Math.random() * 20 + 10,
+      }));
+      function rain() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.strokeStyle = "rgba(255,255,255,.25)";
+        drops.forEach((d) => {
+          ctx.beginPath();
+          ctx.moveTo(d.x, d.y);
+          ctx.lineTo(d.x, d.y + d.l);
+          ctx.stroke();
+          d.y += 7;
+          if (d.y > canvas.height) d.y = 0;
+        });
+        requestAnimationFrame(rain);
+      }
+      rain();
+      document.querySelectorAll(".scroll-link").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        const items = document.querySelectorAll(".accordion-item");
+
+        items.forEach((item, index) => {
           setTimeout(() => {
-            item.classList.add('show');
+            // نمایش خود کشو
+            item.style.opacity = 1;
+            item.style.transform = "translateX(0)";
 
-            // نمایش متن‌ها با delay بیشتر بین هر خط
-            const texts = item.querySelectorAll('p, li');
-            texts.forEach((text, i) => {
+            // باز کردن محتوای کشو
+            const content = item.querySelector(".accordion-content");
+            content.style.maxHeight = content.scrollHeight + "px";
+
+            // نمایش خط به خط متن داخل کشو
+            const lines = content.querySelectorAll("p, li");
+            lines.forEach((line, i) => {
               setTimeout(() => {
-                text.classList.add('text-show');
-              }, i * 400); // کندتر شد (قبلاً 200ms)
+                line.style.opacity = 1;
+                line.style.transform = "translateX(0)";
+              }, i * 300); // هر خط با 300ms فاصله نمایش داده می‌شود
             });
+          }, index * 600); // هر کشو با 600ms فاصله ظاهر می‌شود
+        });
 
-          }, 0);
-
-          observer.unobserve(item);
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-
-  items.forEach(item => observer.observe(item));
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const items = document.querySelectorAll('.accordion-item');
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !entry.target.classList.contains('show')) {
-          const item = entry.target;
-
-          // نمایش باکس
-          item.classList.add('show');
-
-          // نمایش متن‌ها با تاخیر
-          const texts = item.querySelectorAll('p, li');
-          texts.forEach((text, i) => {
-            setTimeout(() => {
-              text.classList.add('text-show');
-            }, i * 400);
+        // برای کلیک روی هدر کشوها
+        const accordions = document.querySelectorAll(".accordion-header");
+        accordions.forEach((header) => {
+          header.addEventListener("click", () => {
+            const content = header.nextElementSibling;
+            if (content.style.maxHeight && content.style.maxHeight !== "0px") {
+              content.style.maxHeight = null;
+              content.querySelectorAll("p, li").forEach((line) => {
+                line.style.opacity = 0;
+                line.style.transform = "translateX(50px)";
+              });
+            } else {
+              document.querySelectorAll(".accordion-content").forEach((c) => {
+                c.style.maxHeight = null;
+                c.querySelectorAll("p, li").forEach((line) => {
+                  line.style.opacity = 0;
+                  line.style.transform = "translateX(50px)";
+                });
+              });
+              content.style.maxHeight = content.scrollHeight + "px";
+              const lines = content.querySelectorAll("p, li");
+              lines.forEach((line, i) => {
+                setTimeout(() => {
+                  line.style.opacity = 1;
+                  line.style.transform = "translateX(0)";
+                }, i * 300);
+              });
+            }
           });
+        });
+      });
+      window.addEventListener("load", () => {
+        const items = document.querySelectorAll(".fade-in");
+        items.forEach((item, index) => {
+          setTimeout(() => {
+            item.classList.add("show");
+          }, index * 300);
+        });
+      });
 
-          observer.unobserve(item);
+      document.addEventListener("DOMContentLoaded", () => {
+        const items = document.querySelectorAll(".accordion-item");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const item = entry.target;
+
+                // نمایش خود باکس با delay بین باکس‌ها
+                setTimeout(() => {
+                  item.classList.add("show");
+
+                  // نمایش متن‌ها با delay بیشتر بین هر خط
+                  const texts = item.querySelectorAll("p, li");
+                  texts.forEach((text, i) => {
+                    setTimeout(() => {
+                      text.classList.add("text-show");
+                    }, i * 400); // کندتر شد (قبلاً 200ms)
+                  });
+                }, 0);
+
+                observer.unobserve(item);
+              }
+            });
+          },
+          { threshold: 0.5 }
+        );
+
+        items.forEach((item) => observer.observe(item));
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const items = document.querySelectorAll(".accordion-item");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (
+                entry.isIntersecting &&
+                !entry.target.classList.contains("show")
+              ) {
+                const item = entry.target;
+
+                // نمایش باکس
+                item.classList.add("show");
+
+                // نمایش متن‌ها با تاخیر
+                const texts = item.querySelectorAll("p, li");
+                texts.forEach((text, i) => {
+                  setTimeout(() => {
+                    text.classList.add("text-show");
+                  }, i * 400);
+                });
+
+                observer.unobserve(item);
+              }
+            });
+          },
+          {
+            root: null,
+            threshold: 0,
+            // 👇 کلید حل مشکل:
+            rootMargin: "-40% 0px -40% 0px",
+          }
+        );
+
+        items.forEach((item) => observer.observe(item));
+      });
+
+      document.addEventListener("contextmenu", function (e) {
+        e.preventDefault(); // جلوگیری از راست‌کلیک
+        alert("کپی کردن محتوا مجاز نیست!");
+      });
+
+      document.addEventListener("keydown", function (e) {
+        // Ctrl+C / Ctrl+S / Ctrl+U / Ctrl+Shift+I
+        if (
+          (e.ctrlKey && ["c", "s", "u"].includes(e.key.toLowerCase())) ||
+          (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i")
+        ) {
+          e.preventDefault();
+          alert("این کار مجاز نیست!");
         }
       });
-    },
-    {
-      root: null,
-      threshold: 0,
-      // 👇 کلید حل مشکل:
-      rootMargin: '-40% 0px -40% 0px'
-    }
-  );
-
-  items.forEach(item => observer.observe(item));
-});
-
-
-
-
-document.addEventListener('contextmenu', function(e) {
-  e.preventDefault(); // جلوگیری از راست‌کلیک
-  alert('کپی کردن محتوا مجاز نیست!');
-});
-
-
-document.addEventListener('keydown', function(e) {
-  // Ctrl+C / Ctrl+S / Ctrl+U / Ctrl+Shift+I
-  if ((e.ctrlKey && ['c','s','u'].includes(e.key.toLowerCase())) || 
-      (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'i')) {
-    e.preventDefault();
-    alert('این کار مجاز نیست!');
-  }
-});
-
-
-</script>
-<script>
-document.addEventListener('keydown', function(e) {
-  if (
-    (e.ctrlKey && e.key.toLowerCase() === 'u') ||
-    (e.ctrlKey && e.shiftKey && ['i','j','c'].includes(e.key.toLowerCase())) ||
-    (e.ctrlKey && ['s','c','a'].includes(e.key.toLowerCase()))
-  ) {
-    e.preventDefault();
-    alert('دسترسی غیرمجاز');
-    return false;
-  }
-});
-</script>
-
-</body>
+    </script>
+    <script>
+      document.addEventListener("keydown", function (e) {
+        if (
+          (e.ctrlKey && e.key.toLowerCase() === "u") ||
+          (e.ctrlKey &&
+            e.shiftKey &&
+            ["i", "j", "c"].includes(e.key.toLowerCase())) ||
+          (e.ctrlKey && ["s", "c", "a"].includes(e.key.toLowerCase()))
+        ) {
+          e.preventDefault();
+          alert("دسترسی غیرمجاز");
+          return false;
+        }
+      });
+    </script>
+  </body>
 </html>
