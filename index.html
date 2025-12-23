@@ -731,6 +731,25 @@ roof waterproofing, bitumen insulation
       .btn-portfolio:hover::after {
         left: 100%;
       }
+      .btn-call {
+  background: #1f7a63;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px; /* فونت بزرگتر برای موبایل */
+  font-weight: 700;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .btn-call {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
     </style>
   </head>
   <body>
@@ -1062,19 +1081,8 @@ roof waterproofing, bitumen insulation
       <p>📍 آدرس: نمایندگی بازار بزرگ تهران</p>
       <p>فروش و اجرا و نصب سراسر تهران و حومه</p>
       <p>
-        <a
-          href="tel:09100910270"
-          style="
-            background: #1f7a63;
-            color: white;
-            padding: 8px 14px;
-            border-radius: 6px;
-            text-decoration: none;
-            display: inline-block;
-          "
-        >
-          📞 تماس بگیرید
-        </a>
+        <a href="tel:09100910270" class="btn-call">📞 تماس بگیرید</a>
+
       </p>
 
       <a href="mailto:hamid.ahmadi0270@gmail.com" class="email-link"
