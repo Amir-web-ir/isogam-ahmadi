@@ -1,145 +1,200 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <title>نمونه کارها | ایزوگام احمدی</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <title>نمونه کارها | ایزوگام احمدی</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="-2147483648_-211286-removebg-preview.png"
+    />
+    <!-- فونت -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- فونت -->
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
-
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:"Vazirmatn",sans-serif;
-    }
-
-    body{
-      background:#0b0d10;
-      color:#fff;
-      line-height:1.9;
-    }
-
-    a{text-decoration:none;color:inherit}
-
-    /* ================= هدر صفحه ================= */
-    .page-header{
-      padding:80px 20px 60px;
-      text-align:center;
-    }
-
-    .page-header h1{
-      font-size:42px;
-      font-weight:800;
-      background:linear-gradient(270deg,#1f7a63,#fff,#1f7a63);
-      background-size:600% 600%;
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      animation:oilFlow 6s ease-in-out infinite;
-    }
-
-    /* ================= ویدیوها ================= */
-    .videos{
-      max-width:1300px;
-      margin:0 auto 100px;
-      padding:0 20px;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:40px;
-    }
-
-    .video-box{
-      border-radius:30px;
-      overflow:hidden;
-      box-shadow:0 30px 80px rgba(0,0,0,.9);
-      background:#000;
-    }
-
-    .video-box video{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-    /* ================= گالری عکس ================= */
-    .gallery{
-      max-width:1300px;
-      margin:0 auto;
-      padding:0 20px 120px;
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:30px;
-    }
-
-    .gallery-item{
-      background:#12151b;
-      border-radius:25px;
-      overflow:hidden;
-      box-shadow:0 20px 60px rgba(0,0,0,.8);
-      transform-style:preserve-3d;
-      transition:.5s;
-    }
-
-    .gallery-item:hover{
-      transform:translateY(-15px) rotateX(6deg);
-      box-shadow:0 40px 100px rgba(31,122,99,.5);
-    }
-
-    .gallery-item img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-
-    /* ================= ریسپانسیو ================= */
-    @media(max-width:900px){
-      .videos{
-        grid-template-columns:1fr;
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Vazirmatn", sans-serif;
       }
-      .gallery{
-        grid-template-columns:repeat(2,1fr);
+
+      body {
+        background: #0b0d10;
+        color: #fff;
+        line-height: 1.9;
       }
-    }
 
-    /* ================= انیمیشن ================= */
-    @keyframes oilFlow{
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
-    }
-  </style>
-</head>
-<body>
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
 
-  <!-- ================= تیتر ================= -->
-  <div class="page-header">
-    <h1>نمونه کارهای اجرای ایزوگام احمدی</h1>
-  </div>
+      /* ================= هدر صفحه ================= */
+      .page-header {
+        padding: 80px 20px 60px;
+        text-align: center;
+      }
 
-  <!-- ================= ویدیوها ================= -->
-  <section class="videos">
-    <div class="video-box">
-      <video src="./VID_20251222_231439_341.mp4" autoplay muted loop playsinline></video>
+      .page-header h1 {
+        font-size: 42px;
+        font-weight: 800;
+        background: linear-gradient(270deg, #1f7a63, #fff, #1f7a63);
+        background-size: 600% 600%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: oilFlow 6s ease-in-out infinite;
+      }
+
+      /* ================= ویدیوها ================= */
+      .videos {
+        max-width: 1300px;
+        margin: 0 auto 100px;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+
+      .video-box {
+        border-radius: 30px;
+        overflow: hidden;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9);
+        background: #000;
+      }
+
+      .video-box video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* ================= گالری عکس ================= */
+      .gallery {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 20px 120px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+      }
+
+      .gallery-item {
+        background: #12151b;
+        border-radius: 25px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+        transform-style: preserve-3d;
+        transition: 0.5s;
+      }
+
+      .gallery-item:hover {
+        transform: translateY(-15px) rotateX(6deg);
+        box-shadow: 0 40px 100px rgba(31, 122, 99, 0.5);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* ================= ریسپانسیو ================= */
+      @media (max-width: 900px) {
+        .videos {
+          grid-template-columns: 1fr;
+        }
+        .gallery {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      /* ================= انیمیشن ================= */
+      @keyframes oilFlow {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      .developer {
+        margin-top: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .developer a {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: #1f7a63;
+        font-weight: 600;
+      }
+
+      .developer img {
+        width: 22px;
+        height: 22px;
+        object-fit: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ================= تیتر ================= -->
+     
+    <div class="page-header">
+      <h1>نمونه کارهای اجرای ایزوگام احمدی</h1>
     </div>
-    <div class="video-box">
-      <video src="./VID_20251223_192329_106.mp4" autoplay muted loop playsinline></video>
+
+    <!-- ================= ویدیوها ================= -->
+    <section class="videos">
+      <div class="video-box">
+        <video
+          src="./VID_20251222_231439_341.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+      </div>
+      <div class="video-box">
+        <video
+          src="./VID_20251223_192329_106.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+      </div>
+    </section>
+
+    <!-- ================= گالری تصاویر ================= -->
+    <section class="gallery">
+      <div class="gallery-item"><img src="./-2147483648_-211256.jpg" /></div>
+      <div class="gallery-item"><img src="./-2147483648_-211258.jpg" /></div>
+      <div class="gallery-item"><img src="./-2147483648_-211260.jpg" /></div>
+      <div class="gallery-item"><img src="./-2147483648_-211263.jpg" /></div>
+      <div class="gallery-item"><img src="./-2147483648_-211264.jpg" /></div>
+      <div class="gallery-item"><img src="./-2147483648_-211269.jpg" /></div>
+      <div class="gallery-item"><img src="./-2147483648_-211270.jpg" /></div>
+      <div class="gallery-item"><img src="./-2147483648_-211268.jpg" /></div>
+    </section>
+
+    <div class="developer">
+      <span>طراحی و اجرا:</span>
+      <a href="https://amir-web-ir.github.io/Site.Craftt.ir/" target="_blank">
+        <img src="./-2147483648_-211238-removebg-preview.png" alt="Logo" />
+        <span> Site-craftt.ir </span>
+      </a>
     </div>
-  </section>
-
-  <!-- ================= گالری تصاویر ================= -->
-  <section class="gallery">
-    <div class="gallery-item"><img src="./-2147483648_-211256.jpg"></div>
-    <div class="gallery-item"><img src="./-2147483648_-211258.jpg"></div>
-    <div class="gallery-item"><img src="./-2147483648_-211260.jpg"></div>
-    <div class="gallery-item"><img src="./-2147483648_-211263.jpg"></div>
-    <div class="gallery-item"><img src="./-2147483648_-211264.jpg"></div>
-    <div class="gallery-item"><img src="./-2147483648_-211269.jpg"></div>
-    <div class="gallery-item"><img src="./-2147483648_-211270.jpg"></div>
-    <div class="gallery-item"><img src="./-2147483648_-211268.jpg"></div>
-  </section>
-
-</body>
+  </body>
 </html>
