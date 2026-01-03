@@ -934,34 +934,6 @@ roof waterproofing, bitumen insulation
     grid-template-columns: 1fr;
   }
 }
-#splash {
-  position: fixed;
-  inset: 0;
-  background: #0b0d10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-.logo {
-  width: 120px;
-  animation: zoomFade 1.5s ease forwards;
-}
-
-@keyframes zoomFade {
-  0% {
-    transform: scale(0.6);
-    opacity: 0;
-  }
-  60% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 
     </style>
   </head>
@@ -976,10 +948,6 @@ if ("serviceWorker" in navigator) {
 }
 </script>
 
-  <body>
-    <div id="splash">
-  <img src="./logo.svg" class="logo" alt="logo">
-</div>
 
     <!-- ================= بکگراند بارون ================= -->
     <canvas id="rain"></canvas>
@@ -1704,11 +1672,6 @@ document.querySelectorAll(".accordion-header").forEach(header => {
     item.classList.toggle("active"); // فقط روی کلیک باز میشه
   });
 });
- window.addEventListener("load", () => {
-    setTimeout(() => {
-      document.getElementById("splash").style.display = "none";
-    }, 1800);
-  });
     </script>
   </body>
 </html>
